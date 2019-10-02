@@ -1,0 +1,19 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link"
+       [routerLink]="['/example-001']"
+       routerLinkActive="active"> Example 001</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"
+       [routerLink]="['/example-002']"
+       routerLinkActive="active"> Example 002</a>
+  </li>
+</ul>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

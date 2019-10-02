@@ -1,0 +1,24 @@
+<form [formGroup]="form">
+
+  <!-- #duplicate -->
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text"
+           class="form-control"
+           [class.is-invalid]="form.controls['name'].invalid"
+           id="name"
+           formControlName="name">
+    <span *ngIf="form.controls['name'].hasError('required')"
+          class="invalid-feedback"> Name is required. </span>
+    <span *ngIf="form.controls['name'].hasError('minlength')"
+          class="invalid-feedback"> Min length is
+      {{ form.controls['name'].errors['minlength']['requiredLength'] }}.</span>
+    <span *ngIf="form.controls['name'].hasError('pattern')"
+          class="invalid-feedback"> Format is not correct.
+    </span>
+  </div>
+  <!-- #duplicate -->
+
+
+</form>
+<pre>form value: {{ form.value | json }}</pre>

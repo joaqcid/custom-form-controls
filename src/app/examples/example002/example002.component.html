@@ -1,0 +1,31 @@
+<form [formGroup]="form">
+  <div class="form-group">
+    <label> Price: </label>
+    <div class="input-group">
+      <input type="text"
+             [class.is-invalid]="form.controls['price'].invalid"
+             (input)="input($event)"
+             id="price"
+             class="form-control">
+      <div ngbDropdown
+           class="input-group-append">
+        <button class="btn btn-outline-secondary "
+                type="button"
+                ngbDropdownToggle
+                *ngIf="selectedCurrency$ | async; let selectedCurrency">
+          {{ selectedCurrency.code}}
+        </button>
+        <div ngbDropdownMenu>
+          <a ngbDropdownItem
+             *ngFor="let currency of currencies"
+             (click)="changeCurrency(currency)">{{currency.code}}</a>
+        </div>
+      </div>
+    </div>
+    <span [class.d-block]="form.controls['price'].hasError('required')"
+          class="invalid-feedback"> Price is required. </span>
+    <span [class.d-block]="form.controls['price'].hasError('NaN')"
+          class="invalid-feedback"> Price must be a number. </span>
+  </div>
+</form>
+<pre>form value: {{ form.value | json }}</pre>
