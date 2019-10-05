@@ -1,9 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { tap } from 'rxjs/operators';
-import { Subscription, combineLatest, Observable, BehaviorSubject, fromEvent, Subject } from 'rxjs';
-
-export interface Currency { code: string; conversionRate: number; }
+import { Subscription, combineLatest, BehaviorSubject, Subject } from 'rxjs';
+import { Currency } from 'src/app/models/currency';
 
 @Component({
   selector: 'app-example002',

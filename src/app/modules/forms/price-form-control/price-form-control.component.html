@@ -1,0 +1,31 @@
+<div class="form-group">
+  <label> Price: </label>
+  <div class="input-group">
+    <input type="text"
+           [class.is-invalid]="ngControl.invalid"
+           (input)="input($event)"
+           [value]="value"
+           id="price"
+           class="form-control">
+    <div ngbDropdown
+         class="input-group-append">
+      <button class="btn btn-outline-secondary "
+              type="button"
+              ngbDropdownToggle
+              *ngIf="selectedCurrency$ | async; let selectedCurrency">
+        {{ selectedCurrency.code}}
+      </button>
+      <div ngbDropdownMenu>
+        <a ngbDropdownItem
+           *ngFor="let currency of currencies"
+           (click)="changeCurrency(currency)">{{currency.code}}</a>
+      </div>
+    </div>
+  </div>
+  <span [class.d-block]="ngControl.hasError('required')"
+        class="invalid-feedback"> Price is required. </span>
+  <span [class.d-block]="ngControl.hasError('NaN')"
+        class="invalid-feedback"> Price must be a number. </span>
+  <span [class.d-block]="ngControl.hasError('pattern')"
+        class="invalid-feedback"> Price has to be under 10000 USD. Currently {{ ngControl.control.value }} </span>
+</div>
