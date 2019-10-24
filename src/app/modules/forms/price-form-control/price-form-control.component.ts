@@ -8,6 +8,13 @@ import { tap, filter, map } from 'rxjs/operators';
   selector: 'app-price-form-control',
   templateUrl: './price-form-control.component.html',
   styleUrls: ['./price-form-control.component.scss'],
+  // providers: [
+  //   {
+  //     provide: NG_VALUE_ACCESSOR,
+  //     useExisting: forwardRef(() => PriceFormControlComponent),
+  //     multi: true
+  //   }
+  // ]
 })
 export class PriceFormControlComponent implements OnInit, OnDestroy, ControlValueAccessor {
 

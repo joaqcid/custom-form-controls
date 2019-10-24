@@ -11,10 +11,6 @@ import { Currency } from 'src/app/models/currency';
 })
 export class Example002Component implements OnInit, OnDestroy {
 
-  form = new FormGroup({
-    price: new FormControl('', [Validators.required])
-  });
-
   ARS = { code: 'AR$', conversionRate: 60.01 };
   USD = { code: 'US$', conversionRate: 1 };
   EUR = { code: 'EU$', conversionRate: 1.09 };
@@ -23,6 +19,10 @@ export class Example002Component implements OnInit, OnDestroy {
     this.USD,
     this.EUR
   ];
+
+  form = new FormGroup({
+    price: new FormControl('', [Validators.required])
+  });
 
   sub: Subscription;
 
@@ -54,9 +54,7 @@ export class Example002Component implements OnInit, OnDestroy {
     const { value } = event.target;
     if (isNaN(value)) {
       this.form.controls.price.setErrors({ NaN: true });
-      this.priceBS.next(null);
     } else {
-      this.form.controls.price.setErrors({ NaN: false });
       this.priceBS.next(value);
     }
   }
