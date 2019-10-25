@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "form-controls": [
+        "dist/form-controls"
+      ],
+      "form-controls/*": [
+        "dist/form-controls/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

@@ -1,8 +1,8 @@
-import { Component, OnInit, OnDestroy, forwardRef, Self, ElementRef } from '@angular/core';
-import { ControlValueAccessor, NgControl, NG_VALUE_ACCESSOR, FormControl, Validators } from '@angular/forms';
-import { Subscription, Subject, BehaviorSubject, combineLatest, fromEvent } from 'rxjs';
+import { Component, OnInit, OnDestroy, Self } from '@angular/core';
+import { ControlValueAccessor, NgControl, Validators } from '@angular/forms';
+import { Subscription, BehaviorSubject, combineLatest } from 'rxjs';
 import { Currency } from 'src/app/models/currency';
-import { tap, filter, map } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-price-form-control',

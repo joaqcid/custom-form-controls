@@ -46,10 +46,6 @@ export class Example002Component implements OnInit, OnDestroy {
     ).subscribe();
   }
 
-  changeCurrency(currency) {
-    this.currencyBS.next(currency);
-  }
-
   input(event) {
     const { value } = event.target;
     if (isNaN(value)) {
@@ -57,6 +53,10 @@ export class Example002Component implements OnInit, OnDestroy {
     } else {
       this.priceBS.next(value);
     }
+  }
+
+  changeCurrency(currency) {
+    this.currencyBS.next(currency);
   }
 
   ngOnDestroy() {
