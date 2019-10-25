@@ -120,7 +120,7 @@
         }
       }
     },
-    "FormControls": {
+    "form-controls": {
       "projectType": "library",
       "root": "projects/form-controls",
       "sourceRoot": "projects/form-controls/src",
