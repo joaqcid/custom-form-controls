@@ -1,0 +1,1 @@
+export interface Currency { code: string; conversionRate: number; }

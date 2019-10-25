@@ -1,6 +1,8 @@
 <form [formGroup]="form">
-  <app-price-form-control formControlName="price"></app-price-form-control>
-  <app-price-form-control formControlName="price2"></app-price-form-control>
-  <app-price-form-control formControlName="price3"></app-price-form-control>
+  <lib-price-form-control formControlName="price"></lib-price-form-control>
+  <lib-price-form-control formControlName="price2"></lib-price-form-control>
+  <lib-price-form-control formControlName="price3"></lib-price-form-control>
+
+  <app-price-form-control formControlName="price4"></app-price-form-control>
 </form>
 <pre>form value: {{ form.value | json }}</pre>

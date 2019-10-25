@@ -19,12 +19,7 @@
       "dom"
     ],
     "paths": {
-      "form-controls": [
-        "dist/form-controls"
-      ],
-      "form-controls/*": [
-        "dist/form-controls/*"
-      ]
+      "@form-controls": ["projects/form-controls/src/public-api.ts"]
     }
   },
   "angularCompilerOptions": {

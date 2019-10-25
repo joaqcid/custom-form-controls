@@ -1,11 +1,11 @@
-import { Component, OnInit, OnDestroy, Self } from '@angular/core';
+import { Component, OnInit, OnDestroy, Self, Optional } from '@angular/core';
 import { ControlValueAccessor, NgControl, Validators } from '@angular/forms';
 import { Subscription, BehaviorSubject, combineLatest } from 'rxjs';
-import { Currency } from 'src/app/models/currency';
 import { tap } from 'rxjs/operators';
+import { Currency } from '../models/currency';
 
 @Component({
-  selector: 'app-price-form-control',
+  selector: 'lib-price-form-control',
   templateUrl: './price-form-control.component.html',
   styleUrls: ['./price-form-control.component.scss'],
   // providers: [
@@ -38,7 +38,7 @@ export class PriceFormControlComponent implements OnInit, OnDestroy, ControlValu
 
   constructor(    
     // @Self() private elementRef: ElementRef,
-    @Self() public ngControl: NgControl,
+    @Optional() @Self() public ngControl: NgControl,
   ) {
     if (this.ngControl) {
       this.ngControl.valueAccessor = this;

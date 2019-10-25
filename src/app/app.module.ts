@@ -7,6 +7,7 @@ import { Example001Component } from './examples/example001/example001.component'
 import { Example002Component } from './examples/example002/example002.component';
 import { FormsModule } from './modules/forms/forms.module';
 import { Example003Component } from './examples/example003/example003.component';
+import { FormControlsModule } from '@form-controls';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { Example003Component } from './examples/example003/example003.component'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    FormControlsModule,
     NgbModule
   ],
   providers: [],

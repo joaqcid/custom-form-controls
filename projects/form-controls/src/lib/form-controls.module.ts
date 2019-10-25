@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PriceFormControlComponent } from './price-form-control/price-form-control.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 
@@ -10,12 +10,14 @@ import { CommonModule } from '@angular/common';
     PriceFormControlComponent,
   ],
   imports: [
+    FormsModule,
     ReactiveFormsModule,
     CommonModule,
     NgbModule,
   ],
   exports: [
     PriceFormControlComponent,
+    FormsModule,
     ReactiveFormsModule,
   ]
 })
