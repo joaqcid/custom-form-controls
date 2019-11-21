@@ -36,7 +36,7 @@ export class PriceFormControlComponent implements OnInit, OnDestroy, ControlValu
   selectedCurrency$ = this.currencyBS.asObservable();
   value: any;
 
-  constructor(    
+  constructor(
     // @Self() private elementRef: ElementRef,
     @Self() public ngControl: NgControl,
   ) {
@@ -72,6 +72,7 @@ export class PriceFormControlComponent implements OnInit, OnDestroy, ControlValu
   }
 
   input(event) {
+    // this.onTouched();
     const { value } = event.target;
     if (isNaN(value)) {
       this.ngControl.control.setErrors({ NaN: true });
@@ -88,10 +89,10 @@ export class PriceFormControlComponent implements OnInit, OnDestroy, ControlValu
     this.sub.unsubscribe();
   }
 
-  // ControlValueAccessor  
-  onTouched: any;
+  // ControlValueAccessor
+  onTouched: () => {};
+  onChange: (value) => {};
   isDisabled: boolean;
-  onChange: any;
 
   writeValue(value: any) {
     if (value) {

@@ -4,6 +4,7 @@
     <input type="text"
            [class.is-invalid]="ngControl.invalid"
            (input)="input($event)"
+           (blur)="onTouched()"
            [value]="value"
            id="price"
            class="form-control">
@@ -29,3 +30,4 @@
   <span [class.d-block]="ngControl.hasError('pattern')"
         class="invalid-feedback"> Price has to be under 10000 USD. Currently {{ ngControl.control.value }} </span>
 </div>
+<pre>{{ngControl.touched | json }}</pre>
